@@ -1,4 +1,5 @@
-﻿using Ambev.DeveloperEvaluation.Application.DTOs;
+﻿using Ambev.DeveloperEvaluation.Application.Commands;
+using Ambev.DeveloperEvaluation.Application.DTOs;
 using Ambev.DeveloperEvaluation.Domain.Entities;
 using AutoMapper;
 using System;
@@ -20,6 +21,12 @@ namespace Ambev.DeveloperEvaluation.Application.Profiles
             // Map de saída (Domain → Response)
             CreateMap<SaleItem, SaleItemResponse>();
             CreateMap<Sale, SaleResponse>();
+
+            CreateMap<CreateSaleRequest, CreateSaleCommand>();
+            CreateMap<CreateSaleItemRequest, CreateSaleCommand.SaleItemDto>();
+
+
+
         }
     }
 }
