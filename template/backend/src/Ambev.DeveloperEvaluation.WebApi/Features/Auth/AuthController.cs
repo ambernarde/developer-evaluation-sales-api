@@ -4,6 +4,7 @@ using AutoMapper;
 using Ambev.DeveloperEvaluation.WebApi.Common;
 using Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthenticateUserFeature;
 using Ambev.DeveloperEvaluation.Application.Auth.AuthenticateUser;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ambev.DeveloperEvaluation.WebApi.Features.Auth;
 
@@ -34,6 +35,8 @@ public class AuthController : BaseController
     /// <param name="request">The authentication request</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Authentication token if successful</returns>
+    /// 
+    [AllowAnonymous]
     [HttpPost]
     [ProducesResponseType(typeof(ApiResponseWithData<AuthenticateUserResponse>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
@@ -51,7 +54,7 @@ public class AuthController : BaseController
 
         return Ok(new ApiResponseWithData<AuthenticateUserResponse>
         {
-            Success = true,
+            //Success = true,
             Message = "User authenticated successfully",
             Data = _mapper.Map<AuthenticateUserResponse>(response)
         });

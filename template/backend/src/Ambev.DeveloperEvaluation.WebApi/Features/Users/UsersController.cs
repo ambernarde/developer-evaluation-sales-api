@@ -54,7 +54,7 @@ public class UsersController : BaseController
 
         return Created(string.Empty, new ApiResponseWithData<CreateUserResponse>
         {
-            Success = true,
+            //Success = true,
             Message = "User created successfully",
             Data = _mapper.Map<CreateUserResponse>(response)
         });
@@ -84,7 +84,7 @@ public class UsersController : BaseController
 
         return Ok(new ApiResponseWithData<GetUserResponse>
         {
-            Success = true,
+            //Success = true,
             Message = "User retrieved successfully",
             Data = _mapper.Map<GetUserResponse>(response)
         });
