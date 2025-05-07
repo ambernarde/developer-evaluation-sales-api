@@ -4,10 +4,12 @@ using Ambev.DeveloperEvaluation.Application.Queries;
 using Ambev.DeveloperEvaluation.WebApi.Common;
 using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class SalesController : BaseController

@@ -67,7 +67,7 @@ namespace Ambev.DeveloperEvaluation.ORM.Repositories
             {
                 // Atualiza propriedades principais
                 existingSale.SaleNumber = sale.SaleNumber;
-                existingSale.CustomerName = sale.CustomerName;
+              
                 existingSale.BranchName = sale.BranchName;
                 existingSale.Date = sale.Date;
 

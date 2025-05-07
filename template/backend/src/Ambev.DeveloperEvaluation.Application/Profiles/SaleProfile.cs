@@ -19,6 +19,10 @@ namespace Ambev.DeveloperEvaluation.Application.Profiles
             CreateMap<CreateSaleRequest, Sale>();
 
             // Map de saída (Domain → Response)
+            CreateMap<CreateSaleCommand, Sale>();
+            CreateMap<CreateSaleCommand.SaleItemDto, SaleItem>();
+
+
             CreateMap<SaleItem, SaleItemResponse>();
             CreateMap<Sale, SaleResponse>();
 
