@@ -25,6 +25,9 @@ namespace Ambev.DeveloperEvaluation.Application.Profiles
             CreateMap<CreateSaleRequest, CreateSaleCommand>();
             CreateMap<CreateSaleItemRequest, CreateSaleCommand.SaleItemDto>();
 
+            CreateMap<UpdateSaleCommand, Sale>();
+            CreateMap<UpdateSaleCommand.SaleItemDto, SaleItem>();
+
 
 
         }

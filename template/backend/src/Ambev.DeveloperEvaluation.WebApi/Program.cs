@@ -53,9 +53,9 @@ public class Program
             });
 
             builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-            // Substitua SaleRepository pelo nome da implementação real
+          
             builder.Services.AddScoped<ISaleRepository, SaleRepository>();
-
+            
 
             var app = builder.Build();
             app.UseMiddleware<ValidationExceptionMiddleware>();

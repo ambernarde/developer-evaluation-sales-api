@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities
 {
@@ -10,28 +7,25 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
     {
         public Guid Id { get; set; }
 
-        // Date when the sale was made
-        public DateTime SaleDate { get; set; }
+        // ✅ Data da venda
+        public DateTime Date { get; set; }
 
-        // External Identity (Customer)
+        // ✅ Identidade externa: cliente e filial
         public Guid CustomerId { get; set; }
-        public string CustomerName { get; set; } = string.Empty;
+        public string CustomerName { get; set; }
 
-        // External Identity (Branch)
-        public Guid BranchId { get; set; }
-        public string BranchName { get; set; } = string.Empty;
-
-        // Sale Number
         public string SaleNumber { get; set; } = string.Empty;
+        public Guid BranchId { get; set; }
+        public string BranchName { get; set; }
 
-        // Sale Items
-        public List<SaleItem> Items { get; set; } = new();
-
-        // Total sale amount
+        // ✅ Valor total da venda
         public decimal TotalAmount { get; set; }
 
-        // Cancelled flag
+        // ✅ Cancelamento
         public bool IsCancelled { get; set; }
-    }
 
+        // ✅ Lista de produtos vendidos
+        public List<SaleItem> Items { get; set; } = new();
+        public DateTime SaleDate { get; set; }
+    }
 }

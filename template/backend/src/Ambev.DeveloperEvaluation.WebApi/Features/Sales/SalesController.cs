@@ -51,5 +51,21 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
 
             return Ok(ApiResponseWithData<List<SaleResponse>>.Success(result));
         }
+
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateSaleCommand command)
+        {
+            command.Id = id;
+            await _mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _mediator.Send(new DeleteSaleCommand(id));
+            return NoContent();
+        }
+
     }
 }

@@ -1,27 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities
 {
     public class SaleItem
     {
+        public Guid Id { get; set; }
+
+        // ✅ Produto vendido
         public Guid ProductId { get; set; }
+        public string ProductName { get; set; }
+        public Guid SaleId { get; set; }
+
+        // ✅ Preço e quantidade
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
+
+        // ✅ Desconto aplicado
         public decimal Discount { get; set; }
+
+        // ✅ Valor total do item (com desconto)
         public decimal Total { get; set; }
 
-        public SaleItem() { }
-
-        private decimal CalculateDiscount(int quantity, decimal unitPrice)
-        {
-            if (quantity < 4) return 0;
-            if (quantity < 10) return quantity * unitPrice * 0.10m;
-            return quantity * unitPrice * 0.20m;
-        }
     }
-
 }
